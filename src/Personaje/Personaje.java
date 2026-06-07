@@ -2,9 +2,9 @@ package Personaje;
 
 public class Personaje {
     private String nombre;
-    private int HP;
-    private int ATK;
-    private int DEF;
+    private double HP;
+    private double ATK;
+    private double DEF;
     private boolean vivo;
 
     public Personaje(){
@@ -45,7 +45,7 @@ public class Personaje {
         this.nombre = nombre;
     }
 
-    public int getHP() {
+    public double getHP() {
         return HP;
     }
 
@@ -53,7 +53,7 @@ public class Personaje {
         this.HP = HP;
     }
 
-    public int getATK() {
+    public double getATK() {
         return ATK;
     }
 
@@ -61,7 +61,7 @@ public class Personaje {
         this.ATK = ATK;
     }
 
-    public int getDEF() {
+    public double getDEF() {
         return DEF;
     }
 
@@ -69,15 +69,11 @@ public class Personaje {
         this.DEF = DEF;
     }
 
-    public boolean isVivo() {
-        return vivo;
-    }
-
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
 
-    public void recibirDaño(int daño){
+    public void recibirDaño(double daño){
         this.HP = this.HP - daño;
         if (this.HP<=0){
             this.vivo=false;
@@ -85,5 +81,19 @@ public class Personaje {
     }
     public void atacar(Personaje objetivo){
         objetivo.recibirDaño(this.ATK);
+    }
+    public boolean isVivo(){
+        return this.vivo;
+    }
+
+    @Override
+    public String toString() {
+        return "Personaje {" +
+                "nombre='" + nombre + '\'' +
+                ", HP=" + HP +
+                ", ATK=" + ATK +
+                ", DEF=" + DEF +
+                ", vivo=" + vivo +
+                " }";
     }
 }

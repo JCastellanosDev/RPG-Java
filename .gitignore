@@ -28,3 +28,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Archivos del IDE y compilados ###
+.idea/
+*.iml
+*.class
